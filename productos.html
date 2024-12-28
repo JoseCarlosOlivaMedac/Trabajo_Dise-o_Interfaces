@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catalogo</title>
+        <!-- Fuente y estilos -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script defer src="./script.js"></script>
+        <script defer src="./descripcion.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-guitar"></i>FreshCore</h1>
+        </div>
+        <button class="menu-burger" id="menu-burger" aria-label="Abrir menú">
+            <i class="fas fa-align-justify"></i> 
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="boxContainerSection">
+
+            <div class="boxContainer" id="boxContainerDiv">
+                <!-- Box 1 -->
+                <div class="box">
+                    <img src="./img/img(1).jpeg" class="imgBox" style="height: 250px;" alt="Imagen 1">
+                    <h3 class="titleBox">Killswitch Engage</h3>
+                    <a href="./descripcion.html" class="detalle-enlace" data-img="img(1).jpeg" data-titulo="Killswitch Engage" data-desc="As Daylight Dies">
+                        As Daylight Dies  
+                    </a>
+                    <h4 class="datos-detalle"  style="display: none;" id="descripcionLarga" data-descLarga>
+                        As Daylight Dies es el tercer álbum de estudio de Killswitch Engage, lanzado el 3 de octubre de 2006 a través de Roadrunner Records. Este álbum marcó un punto de inflexión en la carrera de la banda, ya que les per
+                        mitió alcanzar un mayor reconocimiento en el ámbito del metal moderno, al mismo tiempo que consolidaron su estilo característico. 
+                        ue grabado en los Machine Shop Studios en Massachusetts, con la producción de Adam D, el guitarrista de la banda, lo que le dio una cohesión sonora muy 
+                        particular.
+
+                        Este álbum también fue notable por ser el primero en contar con el regreso de Jesse Leach como vocalista principal. Leach había dejado la banda en 2002 
+                        y fue reemplazado por Howard Jones, quien contribuyó en los dos álbumes previos. Sin embargo, tras la salida de Jones, Leach volvió para grabar 
+                        As Daylight Dies, lo que añadió una nueva dimensión emocional a las canciones.
+                    </h4>
+                    <br>
+                    <span class="precio">$20.00</span>
+                    <button class="btn-primary" onclick="agregarAlCarrito('As Daylight Dies','./img/img(1).jpeg', 20.00)">Añadir al carrito</button>
+                </div>  
+                <!-- Box 2-->
+                <div class="box">
+                    <img src="./img/img(2).jpg" class="imgBox" style="height: 250px;" alt="Imagen 2">
+                    <h3 class="titleBox">Five Finger Death Punch</h3>
+                    <a href="./descripcion.html" class="detalle-enlace" data-img="img(2).jpg" data-titulo="Five Finger Death Punch" data-desc="El álbum The Wrong Side of Heaven es uno de los más potentes de la banda">
+                        The Wrong Side of Heaven
+                    </a>
+                    <h4 class="datos-detalle" style="display: none;">
+                        Uno de los álbumes más emblemáticos de Five Finger Death Punch es "The Wrong Side of Heaven and the Righteous Side of Hell", 
+                        que se lanzó en dos volúmenes, el Vol. 1 el 30 de julio de 2013 y el Vol. 2 el 19 de noviembre del mismo año. Ambos discos fueron
+                         lanzados bajo el sello Prospect Park Records.
+                         es un álbum crucial en la discografía de Five Finger Death Punch, que refleja tanto su agresividad como su habilidad para conectar 
+                         emocionalmente con su audiencia. Con potentes riffs, voces intensas y letras profundas, la banda creó un álbum que no solo es pesado, 
+                         sino que también transmite mensajes de lucha y resistencia, que resonaron fuertemente con su base de seguidores. A través de este disco, FFDP continuó 
+                         consolidándose como una de las principales bandas dentro del panorama del metal moderno.
+                    </h4>
+                    <br>
+                    <span class="precio">$90.00</span>
+                    <button class="btn-primary" onclick="agregarAlCarrito('The Wrong Side of Heaven', './img/img(2).jpg', 90.00)">Añadir al carrito</button>
+                </div>
+                <!--Box 3-->
+                <div class="box">
+                    <img src="./img/img(4).jpg" class="imgBox" style="height: 250px;" alt="Imagen 3">
+                    <h3 class="titleBox">Slipknot</h3>
+                    <a href="./descripcion.html" class="detalle-enlace" data-img="img(4).jpg" data-titulo="Slipknot" data-desc="El álbum The Gray Chapter marca un renacimiento para la banda">
+                        The Gray Chapter
+                    </a>
+                    <h4 class="datos-detalle" style="display: none;">
+                        Slipknot es una de las bandas más influyentes y polémicas dentro del mundo del metal moderno. Formada en 1995 en Des Moines, Iowa.
+                        "5: The Gray Chapter" es el quinto álbum de estudio de Slipknot y fue lanzado el 21 de octubre de 2014. 
+                        Este disco se presenta como una reflexión tanto musical como emocional sobre la pérdida de Paul Gray y
+                         la transformación interna de la banda tras su fallecimiento. A lo largo de las canciones, se puede percibir el dolor, 
+                         la angustia y la desesperación que provocó su muerte, así como la lucha por seguir adelante y 
+                         la necesidad de reconstruir la banda.
+                        Este álbum también marca una nueva etapa en la banda, ya que fue el primero en el que no participó Joey Jordison, quien
+                        fue uno de los miembros más importantes de Slipknot, especialmente en lo que respecta a la batería y la composición. Su salida de la banda, debido a razones no completamente aclaradas, dejó una vacante importante que fue ocupada por Jay Weinberg, hijo del conocido baterista Max Weinberg (de Bruce Springsteen's E Street Band). La inclusión de Weinberg trajo consigo una nueva dinámica en la banda,
+                        pero también marcó un desafío en términos de mantener la esencia del sonido clásico de Slipknot.
+                    </h4>
+                    <br>
+                    <span class="precio">$50.00</span>
+                    <button class="btn-primary" onclick="agregarAlCarrito('The Gray Chapter', './img/img(4).jpg', 50.00)">Añadir al carrito</button>
+                </div>
+
+               <!-- Box 4 -->
+               <div class="box">
+                <img src="./img/img(5).jpg" class="imgBox" style="height: 250px;" alt="Imagen 4">
+                <h3 class="titleBox">KORN</h3>
+                <a href="./descripcion.html" class="detalle-enlace" data-img="img(5).jpg" data-titulo="KORN" data-desc="El álbum Follow the Leader es un hito en el nu metal">
+                    Follow the Leader
+                </a>
+                <h4 class="datos-detalle" style="display: none;">
+                    {"descLarga": "Descripción muy detallada y ampliada sobre KORN y su álbum Follow the Leader."}
+                </h4>
+                <br>
+                <span class="precio">$20.00</span>
+                <button class="btn-primary" onclick="agregarAlCarrito('Follow the Leader', './img/img(5).jpg', 20.00)">Añadir al carrito</button>
+            </div>
+        
+            <!-- Box 5 -->
+         <div class="box">
+        <img src="./img/img(3).jpg" class="imgBox" style="height: 250px;" alt="Imagen 5">
+        <h3 class="titleBox">Spiritbox</h3>
+        <a href="./descripcion.html" class="detalle-enlace" data-img="img(3).jpg" data-titulo="Spiritbox" data-desc="Jaded es una de las canciones más destacadas de la banda">
+            Jaded
+        </a>
+        <h4 class="datos-detalle" style="display: none;">
+            {"descLarga": "Descripción muy detallada y ampliada sobre Spiritbox y su canción Jaded."}
+        </h4>
+        <br>
+        <span class="precio">$20.00</span>
+        <button class="btn-primary" onclick="agregarAlCarrito('Jaded', './img/img(3).jpg', 20.00)">Añadir al carrito</button>
+                </div>
+
+                   <!-- Box 6 -->
+                   <div class="box">
+                    <img src="./img/img(1).jpg" class="imgBox" style="height: 250px;" alt="Imagen 6">
+                    <h3 class="titleBox">Marilyn Manson</h3>
+                    <a href="./descripcion.html" class="detalle-enlace" data-img="img(1).jpg" data-titulo="Marilyn Manson" data-desc="Portrait of an American Family es un álbum clásico de los 90s">
+                        Portrait of an American Family
+                    </a>
+                    <h4 class="datos-detalle" style="display: none;">
+                        {"descLarga": "Descripción muy detallada y ampliada sobre Marilyn Manson y su álbum Portrait of an American Family."}
+                    </h4>
+                    <br>
+                    <span class="precio">$20.00</span>
+                    <button class="btn-primary" onclick="agregarAlCarrito('Portrait of an American Family', './img/img(1).jpg', 10.00)">Añadir al carrito</button>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!--Funcion menú mobile-->
+<script>
+    const menuBurger = document.getElementById('menu-burger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    // Alternar la clase "show" al hacer clic en el botón hamburguesa
+    menuBurger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+</script>
+
+</body>
+</html>

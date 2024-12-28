@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catalogo</title>
+        <!-- Fuente y estilos -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Iconos -->
+        <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script defer src="./script.js"></script>
+    </head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-guitar"></i>FreshCore</h1>
+        </div>
+        <button class="menu-burger" id="menu-burger" aria-label="Abrir menú">
+            <i class="fas fa-align-justify"></i> 
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="carrito">
+            <div class="carrito-flex">
+            <h2>Tu carrito de compras</h2>
+            <div id="productosCarrito"></div> <!-- Aquí se mostrarán los productos -->
+            <button class="btn-Finalizar" onclick="finalizarCompra()">Finalizar compra</button>
+            <button class="btn-Vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+            <button class="btn-mis-pedidos" onclick="window.location.href='mis_pedidos.html'">Ver Mis Pedidos</button>
+        </div>
+        </section>
+
+        <div id="formularioCompra" class="formularioCompra" style="display: none;position: absolute;left: 700px;top: 0;">
+            <h3>Detalles de la compra</h3>
+            <form id="formCompra">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+                
+                <label for="codigoPostal">Código Postal:</label>
+                <input type="text" id="codigoPostal" name="codigoPostal" required>
+                
+                <button type="button" class="btn-Pagar" onclick="procesarPago()">Pagar</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Función para mostrar los productos del carrito
+        function mostrarCarrito() {
+            const productosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const contenedor = document.getElementById('productosCarrito');
+
+            // Limpiar el contenedor antes de agregar los productos
+            contenedor.innerHTML = '';
+
+            if (productosCarrito.length > 0) {
+                productosCarrito.forEach(producto => {
+                    const productoHTML = `
+                        <div class="producto">
+                            <img src="${producto.imagen}" alt="${producto.nombre}">
+                            <h3>${producto.nombre}</h3>
+                            <p>Precio: $${producto.precio}</p>
+                        </div>
+                    `;
+                    contenedor.innerHTML += productoHTML;
+                });
+            } else {
+                contenedor.innerHTML = '<p>Tu carrito está vacío.</p>';
+            }
+        }
+
+        // Función para vaciar el carrito
+        function vaciarCarrito() {
+            localStorage.removeItem('carrito');
+            mostrarCarrito(); // Actualizar la vista del carrito después de vaciarlo
+        }
+
+        // Llamar a la función para mostrar los productos al cargar la página
+        mostrarCarrito();
+    </script>
+
+    
+    <!--Funcion menú mobile-->
+<script>
+    const menuBurger = document.getElementById('menu-burger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    // Alternar la clase "show" al hacer clic en el botón hamburguesa
+    menuBurger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZapDac Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script defer src="./script.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-shoe-prints"></i> ZapDac </h1>
+        </div>
+        <button class="menu-burger" id="menu-burger" aria-label="Abrir menú">
+            <i class="fas fa-align-justify"></i> 
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="containerInicioSesion">
+        <section id="login">
+
+          <h2>Registro</h2>
+
+    <form id="formRegistro" >
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+        <input type="email" id="correo" name="correo" placeholder="Correo" required>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Registrarse</button>
+      </form>
+        </section>
+      </div>
+      
+      <script>
+        // Capturar el formulario y prevenir el envío por defecto
+        const formRegistro = document.getElementById('formRegistro');
+        formRegistro.addEventListener('submit', async (e) => {
+          e.preventDefault();  // Prevenir que el formulario se envíe de forma tradicional
+      
+          // Obtener los datos del formulario
+          const nombre = document.getElementById('nombre').value;
+          const correo = document.getElementById('correo').value;
+          const password = document.getElementById('password').value;
+      
+          // Enviar los datos al backend usando fetch
+          const response = await fetch('http://localhost:3000/registrar', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',  // Asegúrate de que sea JSON
+            },
+            body: JSON.stringify({ nombre, correo, password }),
+          });
+      
+          // Procesar la respuesta del servidor
+          const data = await response.text();
+          if (response.ok) {
+            alert('Usuario registrado correctamente');
+          } else {
+            alert('Error al registrar el usuario: ' + data);
+          }
+        });
+      </script>
+
+   
+
+
+
+
+
+    
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas. Todos los derechos reservados.</p>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+<!--Funcion menú mobile-->
+<script>
+const menuBurger = document.getElementById('menu-burger');
+const navMenu = document.getElementById('nav-menu');
+
+// Alternar la clase "show" al hacer clic en el botón hamburguesa
+menuBurger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>

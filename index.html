@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshCore Home</title>
+    <!-- Fuente y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Iconos -->
+    <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script defer src="./script.js"></script>
+</head>
+
+
+<body>
+  
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-guitar"></i>FreshCore</h1>
+        </div>
+        <button class="menu-burger" id="menu-burger" aria-label="Abrir menú">
+            <i class="fas fa-align-justify"></i> 
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Arte como pasatiempo</h2>
+            <p>Explora nuestra colección exclusiva de discos Metal/Rock.</p>
+            <a href="productos.html" class="btn-primary">Ver productos</a>
+        </div>
+    </section>
+
+   
+    <section class="productos-destacados">
+        <h2 style="color: black;">Productos Destacados</h2>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="./img/img(1).jpeg" alt="Disco 1">
+                <h3>KillsWith Engage</h3>
+                <p>As a Daylight Dies</p>
+                <span class="precio">$20.00</span>
+                <a href="#" class="btn-secundary" onclick="agregarAlCarrito('As a Daylight Dies', './img/pic (1).jpeg', 20.00)">Agregar al carrito</a>
+            </div>
+            <div class="producto">
+                <img src="./img/img(2).jpg" alt="Disco 2" ">
+                <h3>Five Finger Death Punch</h3>
+                <p>The wrong side of heaven</p>
+                <span class="precio">$90.00</span>
+                <a href="#" class="btn-secundary" onclick="agregarAlCarrito('The wrong side of heaven', './img/pic (1).jpg', 90.00)">Agregar al carrito</a>
+            </div>
+            <div class="producto">
+                <img src="./img/img(3).jpg" alt="Disco 3">
+                <h3>Spiritbox</h3>
+                <p>Jaded</p>
+                <span class="precio">$50.00</span>
+                <a href="#" class="btn-secundary" onclick="agregarAlCarrito('Jaded', './img/pic (2).jpg', 20.00)">Agregar al carrito</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 FreshCore. Todos los derechos reservados.</p>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+    
+<!--Funcion menú mobile-->
+<script>
+const menuBurger = document.getElementById('menu-burger');
+const navMenu = document.getElementById('nav-menu');
+
+// Alternar la clase "show" al hacer clic en el botón hamburguesa
+menuBurger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>

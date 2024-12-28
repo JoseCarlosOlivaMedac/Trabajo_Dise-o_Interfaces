@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catalogo</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script defer src="./script.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-guitar"></i>FreshCore</h1>
+        </div>
+        <button class="menu-burger" id="menu-burger" aria-label="Abrir menú">
+            <i class="fas fa-align-justify"></i> 
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="misPedidosContainer">
+            <h2>Historial de pedidos</h2>
+            <div id="misPedidosList">
+                <!-- Los pedidos aparecerán aquí -->
+                 
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mostrar los pedidos almacenados
+        document.addEventListener('DOMContentLoaded', () => {
+            const misPedidos = JSON.parse(localStorage.getItem('misPedidos')) || [];
+            const misPedidosList = document.getElementById('misPedidosList');
+
+            if (misPedidos.length === 0) {
+                misPedidosList.innerHTML = '<p>No tienes pedidos aún.</p>';
+            } else {
+                misPedidos.forEach(pedido => {
+                    const pedidoElement = document.createElement('div');
+                    pedidoElement.classList.add('pedido');
+                    pedidoElement.innerHTML = `
+                        <h3>Pedido #${pedido.id}</h3>
+                        <p><strong>Nombre:</strong> ${pedido.nombre}</p>
+                        <p><strong>Dirección:</strong> ${pedido.direccion}</p>
+                        <p><strong>Fecha:</strong> ${pedido.fecha}</p>
+                        <p><strong>Estado:</strong> ${pedido.estado}</p>
+                    `;
+                    misPedidosList.appendChild(pedidoElement);
+                });
+            }
+        });
+    </script>
+
+      <!--Funcion menú mobile-->
+<script>
+    const menuBurger = document.getElementById('menu-burger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    // Alternar la clase "show" al hacer clic en el botón hamburguesa
+    menuBurger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+    </script>
+</body>
+</html>

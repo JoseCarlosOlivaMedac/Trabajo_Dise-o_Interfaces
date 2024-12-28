@@ -1,0 +1,637 @@
+/* General */
+
+:root{
+    --color-primario:#D32F2F;
+    --color-primario-hover: #E57373; 
+}
+
+html{
+    overflow:scroll;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav ul li a:hover {
+    color: var(--color-primario-hover);
+}
+
+
+
+.menu-burger{
+
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+   filter: invert(1);
+   
+}
+
+@media (max-width:900px){
+
+    .menu-burger{
+        display: flex;
+    }
+
+    .nav-menu.show {
+        position: absolute; 
+        background: #222; 
+        width: 100%; 
+        display:block;
+        top: 60px; 
+        left: 0; 
+        padding: 0.5rem 0; 
+        z-index: 10;
+        
+    }
+    .nav-menu.show li {
+        display: flex;
+       
+        width: 100%;
+        
+    }
+
+    .menu-burger:hover{
+        color: var(--color-primario-hover);
+    }
+
+    .nav-menu{
+        display: none;
+    }
+}
+
+
+.hero {
+    background: url('./img/img\ \(9\).jpg') no-repeat center/cover;
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primario-hover);
+}
+
+
+.productos-destacados {
+    padding: 2rem;
+    text-align: center;
+}
+
+.productos-destacados h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.producto {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.producto p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.producto .precio {
+    color: #222;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.btn-secundary {
+    background-color: var(--color-primario);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.btn-secundary:hover {
+    background-color: var(--color-primario-hover);
+}
+
+
+
+.boxContainer {
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    gap: 3rem; 
+    min-height: 100vh; 
+    padding: 1rem;
+    background-color: #f5f5f5;
+}
+
+.boxContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.box {
+    background-color: #fff;
+    width: 350px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.box h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+    color: #222;
+}
+
+.box p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    margin: 25px;
+    justify-content: center;
+    
+    align-items: center; 
+}
+
+.carrito h2 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.btn-Vaciar{
+    width: 160px;
+}
+
+#productosCarrito {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1em; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+   
+}
+
+.carrito-flex {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    gap: 1em; 
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9; 
+    text-align: center;
+    
+}
+
+.carrito-flex p {
+justify-content: center;  
+align-items: center;
+padding: 20px;  
+text-align: center;
+}
+
+.carrito-flex h3 {
+    justify-content: center;  
+    align-items: center;
+      
+    text-align: center;
+    }
+
+    .carrito-flex button {
+        margin-top: auto;
+        padding: 10px 15px;
+        background-color: var(--color-primario);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .carrito-flex button:hover {
+        background-color: var(--color-primario-hover); 
+    }
+
+.formularioCompra {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.formularioCompra h3 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+}
+
+.formularioCompra form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formularioCompra label {
+    font-size: 16px;
+    color: #333;
+}
+
+.formularioCompra input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.formularioCompra button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.formularioCompra button:hover {
+    background-color: #45a049;
+}
+
+
+#misPedidosContainer {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#misPedidosList .pedido {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#misPedidosList .pedido h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+#misPedidosList .pedido p {
+    font-size: 16px;
+}
+
+
+.btn-mis-pedidos {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-mis-pedidos:hover {
+    background-color: #45a049; 
+}
+
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+   
+    
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: var(--color-primario-hover)
+}
+
+section{
+    margin: 50px;
+   
+   
+}
+
+.containerInicioSesion{
+    display: flex;
+    justify-content: center;
+}
+#login {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    
+}
+
+#login h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color:   var(--color-primario);
+    outline: none;
+}
+
+button {
+    padding: 12px 15px;
+    background-color: var(--color-primario);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-primario-hover);
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+p a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+#registro {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#registro h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--color-primario);
+    outline: none;
+}
+
+
+button {
+    padding: 12px 15px;
+    background-color: var(--color-primario);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-primario-hover);
+}
+
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+p a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+

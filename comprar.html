@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrito</title>
+        <!-- Fuente y estilos -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./comprar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Iconos -->
+        <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script defer src="./script.js"></script>
+    </head>
+
+    <body>
+   
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-shoe-prints"></i> ZapDac</h1>
+        </div>
+        <button class="menu-burger" id="menu-burger" aria-label="Abrir menú">
+            <i class="fas fa-align-justify"></i> 
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="login.html"><i class="fas fa-user"></i> Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <main>
+        <section class="compra-producto">
+            <div class="producto-detalle">
+                <!-- Imagen principal -->
+                <div class="producto-imagen">
+                    <img id="producto-imagen" src="" alt="Imagen del producto">
+                </div>
+                
+                <div class="producto-info">
+                    <h2 id="producto-nombre"></h2>
+                    <p class="descripcion">Explora todos los detalles y características de este increíble producto.</p>
+                    <span id="producto-precio" class="precio"></span>
+                    <p>Elige tu talla:</p>
+                   
+                    <div class="tallas-grid">
+                        <button class="talla-btn" data-id="talla-36">36</button>
+                        <button class="talla-btn" data-id="talla-37">37</button>
+                        <button class="talla-btn" data-id="talla-38">38</button>
+                        <button class="talla-btn" data-id="talla-39">39</button>
+                        <button class="talla-btn" data-id="talla-40">40</button>
+                        <button class="talla-btn" data-id="talla-41">41</button>
+                        <button class="talla-btn" data-id="talla-42">42</button>
+                    </div>
+                    <button id="finalizar-compra" class="btn-primary">Finalizar compra</button>
+                </div>
+            </div>
+        </section>
+    </main>
+   
+    <footer>
+        <p>&copy; 2024 Tienda de Zapatillas. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script para cargar parámetros -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const precio = params.get('precio');
+        const imagen = params.get('imagen');
+
+        document.getElementById('producto-nombre').textContent = nombre;
+        document.getElementById('producto-precio').textContent = `$${precio}`;
+        document.getElementById('producto-imagen').src = imagen;
+    </script>
+
+    <!--Funcion menú mobile-->
+<script>
+    const menuBurger = document.getElementById('menu-burger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    // Alternar la clase "show" al hacer clic en el botón hamburguesa
+    menuBurger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+    </script>
+</body>
+</html>
